@@ -1,0 +1,29 @@
+Convert the given number into a roman numeral.
+
+All roman numerals answers should be provided in upper-case.
+
+Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.
+
+Here are some helpful links:
+
+Roman Numerals
+Array.prototype.splice()
+Array.prototype.indexOf()
+Array.prototype.join()
+
+code:
+
+function convertToRoman(num) {
+var decimal = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+var symbol = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'];
+
+var roman = '';
+
+  for (var i = 0; i < decimal.length; i++) {
+    while (decimal[i] <= num) {
+      roman += symbol[i];
+      num -= decimal[i];
+    }
+  }
+  return roman;
+}
